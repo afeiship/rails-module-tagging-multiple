@@ -33,8 +33,12 @@ class ArticlesController < ApplicationController
     end
   end
 
-  private
+  def destroy
+    article = Article.find(params[:id])
+    article.destroy
+  end
 
+  private
   def allowed_params
     params.require(:article).permit(:content, :name, :tag_list)
   end

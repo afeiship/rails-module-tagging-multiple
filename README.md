@@ -83,6 +83,9 @@ class Tagging < ApplicationRecord
     belongs_to :tag
     belongs_to :taggable, :polymorphic => true, optional: true
 end
+
+### https://github.com/rails/rails/issues/23960
+### https://github.com/thoughtbot/factory_girl_rails/issues/232
 ```
 
 ## resources:
