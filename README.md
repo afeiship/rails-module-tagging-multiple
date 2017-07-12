@@ -71,7 +71,19 @@ end
 
 ```
 
+## reset:
+```bash
+rake db:drop && rake db:migrate && rake db:seed
+```
 
+## problems[tagging is invalid error]:
+```rb
+# model/tagging.rb [optional: true]
+class Tagging < ApplicationRecord
+    belongs_to :tag
+    belongs_to :taggable, :polymorphic => true, optional: true
+end
+```
 
 ## resources:
 + https://rubyplus.com/articles/5091-Tagging-Multiple-Models-from-Scratch-in-Rails-5
