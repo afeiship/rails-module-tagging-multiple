@@ -4,11 +4,19 @@
 ## step by step:
 1. create migrate:
 ```bash
+## old version
 rails g model Tag name:string
 rails g model Episode name:string content:text
 rails g model Article name:string content:text
 rails g model Tagging tag_id:integer taggable_id:integer taggable_type:string
 rake db:migrate
+
+
+## new version
+rails g model Tag name:string
+rails g model Episode name:string content:text
+rails g model Article name:string content:text
+rails g model Tagging tag:references taggable:references{polymorphic}
 ```
 2. models
 ```rb
